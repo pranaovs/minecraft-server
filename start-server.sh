@@ -1,6 +1,8 @@
 #!/usr/bin/env sh
 
 download_plugins() {
+  trap clean INT TERM HUP
+
   echo "Downloading plugins"
 
   tmpdir=$(mktemp -d)
@@ -28,9 +30,13 @@ download_plugins() {
       fi
     else
       echo "Checksum does not exist for $(basename "$filename")"
+      cp -f "$filename" "./plugins/."
+      echo "Installed plugin $(basename "$filename")"
     fi
 
   done <./plugins.txt
+
+  trap - INT TERM HUP
 }
 
 clean() {
@@ -40,6 +46,8 @@ clean() {
 }
 
 download_server() {
+  trap clean INT TERM HUP
+
   echo "Downloading paper"
 
   filename="$(
@@ -56,6 +64,8 @@ download_server() {
     rm -vf "$filename"
     exit 1
   }
+
+  trap - INT TERM HUP
 
 }
 

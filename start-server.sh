@@ -76,7 +76,7 @@ start_server() {
   if command -v tmux && [ -z "$TMUX" ]; then
     tmux new-session -As minecraft "$start_cmd"
   else
-    "$start_cmd"
+    $start_cmd
   fi
 }
 

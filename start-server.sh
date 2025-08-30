@@ -1,5 +1,10 @@
 #!/usr/bin/env sh
 
+if [ "$(git branch --show-current)" = "main" ]; then
+  echo "Refusing to operate on main branch"
+  exit 1
+fi
+
 download_plugins() {
   echo "Downloading plugins"
 

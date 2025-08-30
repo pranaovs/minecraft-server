@@ -73,7 +73,7 @@ start_server() {
 
   echo "Starting $1"
 
-  if command -v tmux; then
+  if command -v tmux && [ -z "$TMUX" ]; then
     tmux new-session -As minecraft "$start_cmd"
   else
     "$start_cmd"

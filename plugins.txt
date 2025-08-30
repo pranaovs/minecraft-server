@@ -1,0 +1,5 @@
+https://hangarcdn.papermc.io/plugins/CyntrixAlgorithm/DeathChest/versions/2.2.8/PAPER/deathchest.jar 6e7e6a5d216fa9a6a7e621147eb395ca57895253b1c8e24b80437b399ceae15b
+https://hangarcdn.papermc.io/plugins/other/DirectionHUD/versions/1.8.1.2%2B1.21.7/PAPER/directionhud-paper-1.8.1.2%2B1.21.7.jar 95cccc78dd59ac75149d10b68c652383d6a4be79ca52164eb7f098b237305fad
+https://hangarcdn.papermc.io/plugins/Black1_TV/Passky/versions/3.3.0/PAPER/Passky-3.3.0.jar b3809e2aaa652144888d4260f97015fb446b3d68c9ae0ffa1c00be4a7dc4725b
+https://hangarcdn.papermc.io/plugins/ViaVersion/ViaVersion/versions/5.4.2/PAPER/ViaVersion-5.4.2.jar 488ca1ddaac52b997f3633eab5a8213153df7339db640a350058d61d0b2ca333
+https://hangarcdn.papermc.io/plugins/ViaVersion/ViaBackwards/versions/5.4.2/PAPER/ViaBackwards-5.4.2.jar 5c7d9e7e43e3c14913109a224281d655498d12da87d57972f5db6a17fce5993a

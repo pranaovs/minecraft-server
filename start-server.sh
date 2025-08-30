@@ -2,6 +2,7 @@
 
 if [ "$(git branch --show-current)" = "main" ]; then
   echo "Refusing to operate on main branch"
+  echo "Use -b to checkout to a new branch"
   exit 1
 fi
 
@@ -85,6 +86,16 @@ start_server() {
   fi
 }
 
+checkout_branch() {
+  new_branch="world-$(date +%Y%m%d-%H%M%S)"
+  echo "Checking out to new branch $new_branch"
+
+  git checkout -b "$new_branch" || {
+    echo "Failed to create new branch $new_branch"
+    exit 1
+  }
+}
+
 help_menu() {
   echo "Usage: $0 [options]"
   echo
@@ -114,6 +125,10 @@ while [ $# -gt 0 ]; do
     ;;
   -h)
     help_menu
+    exit 0
+    ;;
+  -b)
+    checkout_branch
     exit 0
     ;;
   *)

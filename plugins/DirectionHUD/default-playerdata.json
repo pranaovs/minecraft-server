@@ -32,22 +32,22 @@
         ]
       },
       {
-        "module": "COORDINATES",
-        "state": false,
-        "settings": [
-          {
-            "id": "coordinates_xyz-display",
-            "value": true
-          }
-        ]
-      },
-      {
         "module": "DESTINATION",
         "order": 3,
         "state": true,
         "settings": [
           {
             "id": "destination_show-name",
+            "value": true
+          }
+        ]
+      },
+      {
+        "module": "COORDINATES",
+        "state": false,
+        "settings": [
+          {
+            "id": "coordinates_xyz-display",
             "value": true
           }
         ]

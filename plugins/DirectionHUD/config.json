@@ -1,0 +1,36 @@
+{
+  "version": 1.7,
+  "lang": "en_us",
+  "lang-options": [
+    "English - en_us (100%)",
+    "German - de_de (64%)",
+    "Slovak - sk_sk (64%)",
+    "Russian - ru_ru (64%)",
+    "Chinese Simplified - zh_cn (64%)",
+    "Chinese Traditional - zh_tw (64%)"
+  ],
+  "online-mode": false,
+  "location": {
+    "max-y": 512,
+    "max-xz": 30000000
+  },
+  "hud": {
+    "editing": true,
+    "loop-ticks": 1
+  },
+  "destination": {
+    "saving": true,
+    "max-saved": 50,
+    "global": true,
+    "lastdeath": {
+      "saving": true,
+      "max-deaths": 4
+    },
+    "loop-ticks": 20
+  },
+  "social": {
+    "enabled": true,
+    "cooldown": 10
+  },
+  "max-color-presets": 14
+}

@@ -1,7 +1,13 @@
 #!/usr/bin/env sh
 
+clean_downloads() {
+  echo "Cleaning"
+  test -d "./plugins" && rm -vf ./plugins/*.jar
+  rm -vf paper-*.jar
+}
+
 download_plugins() {
-  trap clean INT TERM HUP
+  trap clean_downloads INT TERM HUP
 
   echo "Downloading plugins"
 
@@ -39,14 +45,8 @@ download_plugins() {
   trap - INT TERM HUP
 }
 
-clean() {
-  echo "Cleaning"
-  test -d "./plugins" && rm -vf ./plugins/*.jar
-  rm -vf paper-*.jar
-}
-
 download_server() {
-  trap clean INT TERM HUP
+  trap clean_downloads INT TERM HUP
 
   echo "Downloading paper"
 
@@ -66,7 +66,6 @@ download_server() {
   }
 
   trap - INT TERM HUP
-
 }
 
 start_server() {
@@ -83,14 +82,21 @@ start_server() {
 
   echo "Starting $1"
 
-  if command -v tmux && [ -z "$TMUX" ]; then
+  if command -v tmux >/dev/null && [ -z "$TMUX" ]; then
     tmux new-session -As minecraft "$start_cmd"
   else
     $start_cmd
   fi
 }
 
-checkout_branch() {
+new_world() {
+  echo "Creating new world"
+
+  git checkout main || {
+    echo "Failed to checkout main branch"
+    exit 1
+  }
+
   new_branch="world-$(date +%Y%m%d-%H%M%S)"
 
   git checkout -b "$new_branch" || {
@@ -99,31 +105,46 @@ checkout_branch() {
   }
 }
 
+save_world() {
+  echo "Saving world"
+
+  git add -A || {
+    echo "Failed to stage changes"
+    exit 1
+  }
+
+  git commit -m "World auto save at $(date +%Y%m%d-%H%M%S)" || {
+    echo "Failed to commit changes"
+  }
+
+}
+
+clean_world() {
+  echo "Cleaning world"
+
+  git reset --hard HEAD && git clean -fd
+
+  clean_downloads
+}
+
 help_menu() {
   echo "Usage: $0 [options]"
   echo
   echo "Options:"
-  echo "  -c          Clean environment"
-  echo "  -i          Download server and plugins"
+  echo "  -n          Create new world (branch)"
+  echo "  -s          Save current world (commit)"
   echo "  -p          Download plugins"
+  echo "  -C          Clean world to last save (commit)"
   echo "  -h          Show help"
   echo
   echo "If no options are provided, the server will start."
 }
 
-# If no arguments given, start server
-if [ $# -eq 0 ]; then
-
-  [ "$(git branch --show-current)" = "main" ] && checkout_branch
-  start_server
-  exit 0
-fi
-
 # POSIX argument parsing
 while [ $# -gt 0 ]; do
   case "$1" in
-  -c)
-    clean
+  -C)
+    clean_world
     ;;
   -p)
     download_plugins
@@ -136,6 +157,14 @@ while [ $# -gt 0 ]; do
     checkout_branch
     exit 0
     ;;
+  -n)
+    save_world
+    new_world
+    ;;
+  -s)
+    save_world
+    exit 0
+    ;;
   *)
     echo "Invalid option: $1" >&2
     help_menu
@@ -144,3 +173,11 @@ while [ $# -gt 0 ]; do
   esac
   shift
 done
+
+if [ "$(git branch --show-current)" = "main" ]; then
+  new_world
+else
+  save_world
+fi
+
+start_server

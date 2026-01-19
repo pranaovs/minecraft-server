@@ -1,5 +1,0 @@
-https://hangarcdn.papermc.io/plugins/ViaVersion/ViaVersion/versions/5.6.0/PAPER/ViaVersion-5.6.0.jar b0c2309204c56dd332bf141841bd7752a339ed469259f2f37ffcfb0e2fcb6649
-https://hangarcdn.papermc.io/plugins/ViaVersion/ViaBackwards/versions/5.6.0/PAPER/ViaBackwards-5.6.0.jar 230554e6562544a8c1171d33abd04e761b011292a524140b72d0ec1949b5f463
-https://download.geysermc.org/v2/projects/geyser/versions/2.9.2/builds/1013/downloads/spigot f536640d4cb6c484277d17f00e65645bb6684d1af1c07c010686e307a9fc3b46
-https://hangarcdn.papermc.io/plugins/other/DirectionHUD/versions/1.8.1.2%2B1.21.7/PAPER/directionhud-paper-1.8.1.2%2B1.21.7.jar 95cccc78dd59ac75149d10b68c652383d6a4be79ca52164eb7f098b237305fad
-https://hangarcdn.papermc.io/plugins/CyntrixAlgorithm/DeathChest/versions/2.2.9/PAPER/deathchest.jar 84fb0dd09386102951ad9c4a5b75a3541db866199168b49e4e36354426b9a35b

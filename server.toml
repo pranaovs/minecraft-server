@@ -1,0 +1,42 @@
+name = "Goofy-ahh Server"
+mc_version = "1.21.11"
+
+[jar]
+type = "paper"
+
+[variables]
+SERVER_PORT = "25565"
+difficulty = "normal"
+
+[launcher]
+eula_args = true
+nogui = true
+preset_flags = "aikars"
+
+[markdown]
+files = ["README.md"]
+auto_update = false
+
+[options]
+success_line = ""
+stop_command = ""
+
+[[mods]]
+type = "hangar"
+id = "ViaVersion/ViaVersion"
+
+[[mods]]
+type = "hangar"
+id = "ViaVersion/ViaBackwards"
+
+[[mods]]
+type = "hangar"
+id = "GeyserMC/Geyser"
+
+[[mods]]
+type = "hangar"
+id = "CyntrixAlgorithm/DeathChest"
+
+[[mods]]
+type = "hangar"
+id = "other/DirectionHUD"

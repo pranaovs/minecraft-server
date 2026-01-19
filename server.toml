@@ -1,8 +1,8 @@
-name = "Goofy-ahh Server"
+name = "Goofy-ahh Fabric Server"
 mc_version = "1.21.11"
 
 [jar]
-type = "paper"
+type = "fabric"
 
 [variables]
 SERVER_PORT = "25565"
@@ -15,28 +15,108 @@ preset_flags = "aikars"
 
 [markdown]
 files = ["README.md"]
-auto_update = false
+auto_update = true
 
-[options]
-success_line = ""
-stop_command = ""
+# Plugins
+[[mods]]
+type = "modrinth"
+id = "cardboard"
 
 [[mods]]
 type = "hangar"
-id = "ViaVersion/ViaVersion"
+id = "ViaVersion"
+version = "latest"
 
 [[mods]]
 type = "hangar"
-id = "ViaVersion/ViaBackwards"
+id = "ViaBackwards"
+version = "latest"
+
+# Mods
+[[mods]]
+type = "modrinth"
+id = "appleskin"
 
 [[mods]]
-type = "hangar"
-id = "GeyserMC/Geyser"
+type = "modrinth"
+id = "tree-harvester"
 
 [[mods]]
-type = "hangar"
-id = "CyntrixAlgorithm/DeathChest"
+type = "modrinth"
+id = "ore-harvester"
 
 [[mods]]
-type = "hangar"
-id = "other/DirectionHUD"
+type = "modrinth"
+id = "scaled-dragon-fight"
+
+[[mods]]
+type = "ghrel"
+repo = "Tschipcraft/dynamiclights"
+tag = "latest"
+asset = "dynamiclights-${tag}-mc1.17-${mcver}-mod.jar"
+
+[[mods]]
+type = "modrinth"
+id = "your-items-are-safe"
+
+[[mods]]
+type = "modrinth"
+id = "better-fabric-console"
+
+[[mods]]
+type = "modrinth"
+id = "viafabric"
+
+# Performance
+[[mods]]
+type = "modrinth"
+id = "krypton"
+
+[[mods]]
+type = "modrinth"
+id = "lithium"
+
+# Dependencies
+[[mods]]
+type = "modrinth"
+id = "collective"
+
+[[mods]]
+type = "modrinth"
+id = "fabric-api"
+
+[[mods]]
+type = "modrinth"
+id = "cloth-config"
+
+[[mods]]
+type = "modrinth"
+id = "yacl"
+
+[[mods]]
+type = "modrinth"
+id = "fabric-language-kotlin"
+
+[[mods]]
+type = "modrinth"
+id = "ferrite-core"
+
+[[mods]]
+type = "modrinth"
+id = "puzzles-lib"
+
+[[mods]]
+type = "modrinth"
+id = "forge-config-api-port"
+
+[[mods]]
+type = "modrinth"
+id = "konkrete"
+
+[[mods]]
+type = "modrinth"
+id = "midnightlib"
+
+[[mods]]
+type = "modrinth"
+id = "icommon"

@@ -22,15 +22,15 @@ auto_update = true
 type = "modrinth"
 id = "cardboard"
 
-[[mods]]
-type = "hangar"
-id = "ViaVersion"
-version = "latest"
-
-[[mods]]
-type = "hangar"
-id = "ViaBackwards"
-version = "latest"
+# [[mods]]
+# type = "hangar"
+# id = "ViaVersion"
+# version = "5.7.1"
+#
+# [[mods]]
+# type = "hangar"
+# id = "ViaBackwards"
+# version = "5.7.1"
 
 # Mods
 [[mods]]
@@ -65,7 +65,17 @@ id = "better-fabric-console"
 
 [[mods]]
 type = "modrinth"
-id = "viafabric"
+id = "ViaFabric"
+
+[[mods]]
+type = "modrinth"
+id = "ViaVersion"
+version = "5.7.1"
+
+[[mods]]
+type = "modrinth"
+id = "ViaBackwards"
+version = "5.7.1"
 
 # Performance
 [[mods]]
@@ -120,3 +130,8 @@ id = "midnightlib"
 [[mods]]
 type = "modrinth"
 id = "icommon"
+
+
+[[mods]]
+type = "modrinth"
+id = "adventure-platform-mod"
